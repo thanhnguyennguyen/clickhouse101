@@ -39,6 +39,9 @@
   "author": "NguyenNguyen",
   "license": "Apache-2.0",
   "dependencies": {
+    "@clickhouse/client": "^1.1.0",
+    "clickhouse-orm": "^3.0.2",
+    "config": "^3.3.11",
     "tslib": "~2.5"
   }
 }
