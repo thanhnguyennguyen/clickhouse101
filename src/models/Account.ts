@@ -4,7 +4,7 @@ import { IDataModel } from "./interface"
 export interface IAccountModel extends IDataModel {
     address: string,
     balance?: number
-    isContract?: boolean,
+    contractData?: object,
     status?: number,
     createdAt?: Date
     updatedAt?: Date
@@ -15,7 +15,7 @@ export const schema: ModelSyncTableConfig<IAccountModel> = {
     schema: {
       address: { type: DATA_TYPE.String }, 
       balance: { type: DATA_TYPE.Int64 },
-      isContract: { type: DATA_TYPE.Boolean },
+      contractData: { type: DATA_TYPE.Other('JSON') },
       status: { type: DATA_TYPE.Int8, default: 1 },
       createdAt: { type: DATA_TYPE.DateTime, default: Date },
       updatedAt: { type: DATA_TYPE.DateTime, default: Date  },
