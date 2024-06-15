@@ -4,7 +4,7 @@ import { IDataModel } from "./interface"
 export interface IAccountModel extends IDataModel {
     address: string,
     balance?: number
-    contractData?: string, // JSON.stringify
+    contractData?: string,
     status?: number,
     createdAt?: Date
     updatedAt?: Date
@@ -15,7 +15,7 @@ export const schema: ModelSyncTableConfig<IAccountModel> = {
     schema: {
       address: { type: DATA_TYPE.String }, 
       balance: { type: DATA_TYPE.Int64 },
-      contractData: { type: DATA_TYPE.String },
+      contractData: { type: DATA_TYPE.String }, // use String and JSON function https://clickhouse.com/docs/en/sql-reference/functions/json-functions
       status: { type: DATA_TYPE.Int8, default: 1 },
       createdAt: { type: DATA_TYPE.DateTime, default: Date },
       updatedAt: { type: DATA_TYPE.DateTime, default: Date  },
